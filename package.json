@@ -1,5 +1,5 @@
 {
-  "name": "filtrarkjs",
+  "name": "@knowark/filtrarkjs",
   "version": "0.1.0",
   "description": "Flexible Filtering for Javascript",
   "main": "index.js",
