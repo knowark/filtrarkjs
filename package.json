@@ -1,0 +1,54 @@
+{
+  "name": "filtrarkjs",
+  "version": "0.1.0",
+  "description": "Flexible Filtering for Javascript",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "babel": {
+    "presets": [
+      [
+        "@babel/preset-env",
+        {
+          "targets": {
+            "node": "current"
+          }
+        }
+      ]
+    ]
+  },
+  "jest": {
+    "verbose": true,
+    "clearMocks": true,
+    "coverageDirectory": "coverage"
+  },
+  "scripts": {
+    "test": "jest --coverage"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knowark/filtrarkjs.git"
+  },
+  "keywords": [
+    "polish",
+    "notation",
+    "domain",
+    "filter",
+    "comparison",
+    "search"
+  ],
+  "author": "Nubark <it@nubark.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/knowark/filtrarkjs/issues"
+  },
+  "homepage": "https://github.com/knowark/filtrarkjs#readme",
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.3.1",
+    "babel-jest": "^24.1.0",
+    "jest": "^24.1.0"
+  }
+}
