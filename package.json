@@ -1,6 +1,6 @@
 {
   "name": "@knowark/filtrarkjs",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Flexible Filtering for Javascript",
   "main": "index.js",
   "directories": {
