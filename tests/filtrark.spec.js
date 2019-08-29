@@ -106,4 +106,14 @@ describe('Filtrark', () => {
       expect(result).toBeTruthy()
     }
   })
+
+  it('Domain parses snake-case fields to camel-case', function () {
+    const domain = [['field_one', '=', 9]]
+    const mockObject = { fieldOne: 9 }
+    const expected = obj => obj.fieldOne === 9
+
+    const result = filtrark.parse(domain)
+
+    expect(result(mockObject)).toEqual(expected(mockObject))
+  })
 })
