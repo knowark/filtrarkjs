@@ -14,11 +14,15 @@ describe('Filtrark', () => {
       [['field', '<', 99], obj => obj.field < 99, { field: 99 }],
       [['field', '>=', 99], obj => obj.field >= 99, { field: 99 }],
       [['field', '<=', 99], obj => obj.field <= 99, { field: 99 }],
-      [
-        ['field', 'ilike', 'ABC123'],
+      [['field', 'like', 'Abc123'], obj => obj.field.indexOf('Abc123') >= 0,
+        { field: 'Abc123' }],
+      [['field', 'ilike', 'ABC123'],
         obj => obj.field.toLowerCase().indexOf('ABC123') >= 0,
-        { field: 'ABC123' }
-      ]
+        { field: 'ABC123' }],
+      [['field', 'in', [1, 2, 3]],
+        obj => [1, 2, 3].includes(obj.field), { field: 2 }],
+      [['field', 'contains', 3],
+        obj => obj.field.includes(3), { field: [1, 2, 3] }]
     ]
 
     for (const testTuple of testTuples) {
@@ -105,15 +109,5 @@ describe('Filtrark', () => {
       const result = filtrark.parse(domain[0])
       expect(result).toBeTruthy()
     }
-  })
-
-  it('Domain parses snake-case fields to camel-case', function () {
-    const domain = [['field_one', '=', 9]]
-    const mockObject = { fieldOne: 9 }
-    const expected = obj => obj.fieldOne === 9
-
-    const result = filtrark.parse(domain)
-
-    expect(result(mockObject)).toEqual(expected(mockObject))
   })
 })

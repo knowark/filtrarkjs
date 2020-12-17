@@ -19,10 +19,16 @@
       ]
     ]
   },
+  "standard": {
+      "env": ["jest"]
+  },
   "jest": {
     "verbose": true,
     "clearMocks": true,
-    "coverageDirectory": "coverage"
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+        "**/src/**"
+    ]
   },
   "scripts": {
     "test": "jest --coverage"
