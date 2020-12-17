@@ -1,6 +1,6 @@
 {
   "name": "@knowark/filtrarkjs",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Flexible Filtering for Javascript",
   "main": "index.js",
   "directories": {
@@ -20,14 +20,16 @@
     ]
   },
   "standard": {
-      "env": ["jest"]
+    "env": [
+      "jest"
+    ]
   },
   "jest": {
     "verbose": true,
     "clearMocks": true,
     "coverageDirectory": "coverage",
     "collectCoverageFrom": [
-        "**/src/**"
+      "**/src/**"
     ]
   },
   "scripts": {
