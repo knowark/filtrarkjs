@@ -2,7 +2,7 @@
   "name": "@knowark/filtrarkjs",
   "version": "0.3.0",
   "description": "Flexible Filtering for Javascript",
-  "main": "index.js",
+  "main": "lib/index.js",
   "directories": {
     "lib": "lib",
     "test": "tests"
