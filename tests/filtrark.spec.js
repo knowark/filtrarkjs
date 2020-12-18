@@ -21,6 +21,8 @@ describe('Filtrark', () => {
         { field: 'ABC123' }],
       [['field', 'in', [1, 2, 3]],
         obj => [1, 2, 3].includes(obj.field), { field: 2 }],
+      [['field', 'in', ['1', '2', '3']],
+        obj => ['1', '2', '3'].includes(obj.field), { field: '2' }],
       [['field', 'contains', 3],
         obj => obj.field.includes(3), { field: [1, 2, 3] }]
     ]
@@ -85,7 +87,10 @@ describe('Filtrark', () => {
           obj.field === 7 || (!(obj.field2 !== 8) && obj.field3 >= 9),
         { field: 7, field2: 8, field3: 9 }
       ],
-      [['!', ['field', '=', 7]], obj => !(obj.field === 7), { field: 7 }]
+      [['!', ['field', '=', 7]], obj => !(obj.field === 7), { field: 7 }],
+      [
+        [['field2', 'in', ['1', '2', '3']]],
+        obj => ['1', '2', '3'].includes(obj.field2), { field2: '2' }]
     ]
 
     for (const testDomain of testDomains) {
