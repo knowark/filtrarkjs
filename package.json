@@ -29,7 +29,7 @@
     "clearMocks": true,
     "coverageDirectory": "coverage",
     "collectCoverageFrom": [
-      "**/src/**"
+      "**/lib/**"
     ]
   },
   "scripts": {
